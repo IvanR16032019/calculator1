@@ -152,3 +152,13 @@ body {
 .button.backspace:hover {
   background-color: #f7b32c;
 }
+
+/* Estilo para el botón de resta */
+.button.operator {
+  background-color: #f9a826;
+  color: white;
+}
+
+.button.operator:hover {
+  background-color: #f7b32c;
+}

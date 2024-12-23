@@ -82,6 +82,9 @@ const Calculator = () => {
         <button onClick={() => handleClick('6')} className="button">
           6
         </button>
+        <button onClick={() => handleClick('-')} className="button operator">
+          -
+        </button> {/* Agregado el botón de resta */}
 
         <button onClick={() => handleClick('1')} className="button">
           1
