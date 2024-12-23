@@ -1,0 +1,143 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px; /* Para evitar que el contenido toque los bordes en dispositivos pequeños */
+  flex-direction: column;
+}
+
+/* Estilo para la calculadora */
+.calculator {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 400px; /* Máximo ancho para pantallas grandes */
+  margin-top: 20px;
+}
+
+.calculator-display {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.calculator-display input {
+  width: 100%;
+  padding: 15px;
+  font-size: 2rem;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Estilo para los botones */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.button {
+  padding: 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #dcdcdc;
+}
+
+.button.operator {
+  background-color: #f9a826;
+  color: white;
+}
+
+.button.operator:hover {
+  background-color: #f7b32c;
+}
+
+.button.equal {
+  background-color: #4caf50;
+  color: white;
+  grid-column: span 4;
+}
+
+.button.equal:hover {
+  background-color: #45a049;
+}
+
+.button.clear {
+  background-color: #ff5555;
+  color: white;
+  grid-column: span 2;
+}
+
+.button.clear:hover {
+  background-color: #e04e4e;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .calculator {
+    width: 100%;
+    max-width: 350px; /* Limitar el tamaño en pantallas muy pequeñas */
+    padding: 15px;
+  }
+
+  .calculator-display input {
+    font-size: 1.8rem; /* Reducir el tamaño de la fuente en dispositivos pequeños */
+  }
+
+  .button {
+    font-size: 1.3rem; /* Reducir el tamaño de la fuente de los botones */
+    padding: 15px;
+  }
+
+  .calculator-buttons {
+    grid-template-columns: repeat(4, 1fr); /* Asegura que los botones sigan en 4 columnas */
+  }
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 100%;
+    max-width: 280px; /* Limitar aún más el tamaño en pantallas muy pequeñas */
+  }
+
+  .calculator-display input {
+    font-size: 1.5rem; /* Reducir aún más el tamaño de la fuente en pantallas muy pequeñas */
+  }
+
+  .button {
+    font-size: 1.2rem; /* Reducir el tamaño de los botones */
+    padding: 12px;
+  }
+
+  .button.operator,
+  .button.equal,
+  .button.clear {
+    font-size: 1.3rem; /* Reducir el tamaño de las letras en botones especiales */
+  }
+}

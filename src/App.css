@@ -1,0 +1,196 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(197, 197, 197);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  position: relative; /* Necesario para el posicionamiento absoluto del logo */
+}
+
+.app-container {
+  width: 100%;
+  max-width: 600px; /* Limita el ancho máximo para que no se expanda demasiado en pantallas grandes */
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Estilo para el contenedor de la calculadora */
+.calculator {
+  background-color: rgb(68, 68, 68);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
+
+/* Estilo para el header y logo */
+.header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  opacity: 0;
+  transform: translateY(-30px);
+}
+
+/* Animación del logo */
+.logo-animation {
+  animation: logoFadeIn 1s forwards;
+}
+
+/* Animación para el logo */
+@keyframes logoFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para la pantalla de la calculadora */
+.calculator-display {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.calculator-display input {
+  width: 100%;
+  padding: 15px;
+  font-size: 2rem;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+  color: red;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Estilo para los botones */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.button {
+  padding: 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #dcdcdc;
+}
+
+.button.operator {
+  background-color: #f9a826;
+  color: white;
+}
+
+.button.operator:hover {
+  background-color: #f7b32c;
+}
+
+.button.equal {
+  background-color: #4caf50;
+  color: white;
+  grid-column: span 4;
+}
+
+.button.equal:hover {
+  background-color: #45a049;
+}
+
+.button.clear {
+  background-color: #ff5555;
+  color: white;
+  grid-column: span 2;
+}
+
+.button.clear:hover {
+  background-color: #e04e4e;
+}
+
+/* Media Queries para hacer el diseño responsive */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .logo {
+    width: 80px; /* Reducir el tamaño del logo en pantallas pequeñas */
+  }
+
+  .calculator {
+    padding: 10px; /* Reducir el espacio de padding en la calculadora */
+  }
+
+  .calculator-display input {
+    font-size: 1.5rem; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+    padding: 10px;
+  }
+
+  .button {
+    padding: 15px; /* Reducir el tamaño de los botones */
+    font-size: 1.2rem;
+  }
+
+  .button.clear {
+    grid-column: span 2; /* Asegurar que el botón de 'C' ocupe 2 columnas */
+  }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (max-width: 768px) {
+  .logo {
+    width: 90px; /* Logo ligeramente más pequeño en pantallas medianas */
+  }
+
+  .calculator {
+    width: 90%; /* Reducir el ancho de la calculadora para pantallas medianas */
+  }
+
+  .calculator-display input {
+    font-size: 1.8rem; /* Ajuste de fuente en pantallas medianas */
+  }
+
+  .button {
+    padding: 18px;
+    font-size: 1.4rem;
+  }
+}
+
+/* Pantallas grandes (escritorios) */
+@media (min-width: 1024px) {
+  .logo {
+    width: 120px; /* Aumentar el tamaño del logo en pantallas grandes */
+  }
+
+  .calculator {
+    width: 320px; /* Mantener el tamaño de la calculadora como estaba en la versión de escritorio */
+  }
+
+  .calculator-display input {
+    font-size: 2rem; /* Ajuste de la fuente */
+  }
+}
