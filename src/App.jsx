@@ -14,7 +14,7 @@ function App() {
       <div className="header">
         <img
           id="logo"
-          src="../public/imagenes/ircdev.png" // Reemplaza con la URL de tu logo
+          src="./imagenes/ircdev.png" // Reemplaza con la URL de tu logo
           alt="Logo de la empresa"
           className="logo"
         />
