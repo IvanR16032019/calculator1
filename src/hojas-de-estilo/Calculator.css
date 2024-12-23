@@ -141,3 +141,14 @@ body {
     font-size: 1.3rem; /* Reducir el tamaño de las letras en botones especiales */
   }
 }
+
+/* Agregar estilo para el botón de retroceso */
+.button.backspace {
+  background-color: #f9a826;
+  color: white;
+  grid-column: span 1;
+}
+
+.button.backspace:hover {
+  background-color: #f7b32c;
+}

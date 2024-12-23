@@ -15,6 +15,10 @@ const Calculator = () => {
     setError('');
   };
 
+  const handleBackspace = () => {
+    setInput(input.slice(0, -1)); // Eliminar el último carácter
+  };
+
   const handleCalculate = () => {
     if (input === '') {
       setError('Inserta los valores');
@@ -46,14 +50,14 @@ const Calculator = () => {
         <button onClick={() => handleClear()} className="button clear">
           Empty
         </button>
+        <button onClick={handleBackspace} className="button backspace">
+          ←
+        </button>
         <button onClick={() => handleClick('/')} className="button operator">
           /
         </button>
         <button onClick={() => handleClick('*')} className="button operator">
           *
-        </button>
-        <button onClick={() => handleClick('-')} className="button operator">
-          -
         </button>
 
         <button onClick={() => handleClick('7')} className="button">
